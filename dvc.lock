@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: src/prepare.py
+      hash: md5
+      md5: 245cca5945ccdc1bb84f338cdcf338f9
+      size: 521
+    outs:
+    - path: data/raw/
+      hash: md5
+      md5: 23b0000338669d2c61217dbd94633aa0.dir
+      size: 54950512
+      nfiles: 4
