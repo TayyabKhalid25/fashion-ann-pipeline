@@ -1,5 +1,5 @@
 # Random ah comment just for making a new commit in dev branch.
-venv/ 
+.venv/ 
 __pycache__/
 .dvc/cache
 *.h5
