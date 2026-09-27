@@ -14,9 +14,11 @@ def main():
     x_test = np.load("data/raw/x_test.npy")
     y_test = np.load("data/raw/y_test.npy")
 
-    # Normalize to [-1, 1] range:
-    x_train_full = (x_train_full.astype("float32") / 127.5) - 1.0
-    x_test = (x_test.astype("float32") / 127.5) - 1.0
+    # Normalize pixel values to [0, 1]
+    mean = x_train_full.mean()
+    std = x_train_full.std()
+    x_train_full = (x_train_full - mean) / (std + 1e-7)
+    x_test = (x_test - mean) / (std + 1e-7)
 
     # Split train and validation sets
     x_train, x_val, y_train, y_val = train_test_split(
